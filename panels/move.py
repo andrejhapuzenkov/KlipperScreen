@@ -80,25 +80,25 @@ class Panel(ScreenPanel):
             zm, zp = zp, zm
 
         scale = self._gtk.img_scale * self._gtk.button_image_scale
-        self.buttons[xm].set_image(self._gtk.Image("arrow-left", scale, scale))
-        self.buttons[yp].set_image(self._gtk.Image("arrow-up", scale, scale))
-        self.buttons[xp].set_image(self._gtk.Image("arrow-right", scale, scale))
-        self.buttons[ym].set_image(self._gtk.Image("arrow-down", scale, scale))
+        self.buttons[yp].set_image(self._gtk.Image("arrow-left", scale, scale))
+        self.buttons[xp].set_image(self._gtk.Image("arrow-up", scale, scale))
+        self.buttons[ym].set_image(self._gtk.Image("arrow-right", scale, scale))
+        self.buttons[xm].set_image(self._gtk.Image("arrow-down", scale, scale))
 
         grid = Gtk.Grid(row_homogeneous=True, column_homogeneous=True)
         if self._screen.vertical_mode:
-            grid.attach(self.buttons[xm], 0, 1, 1, 1)
-            grid.attach(self.buttons[xp], 2, 1, 1, 1)
-            grid.attach(self.buttons[ym], 1, 1, 1, 1)
-            grid.attach(self.buttons[yp], 1, 0, 1, 1)
+            grid.attach(self.buttons[ym], 0, 1, 1, 1)
+            grid.attach(self.buttons[yp], 2, 1, 1, 1)
+            grid.attach(self.buttons[xm], 1, 1, 1, 1)
+            grid.attach(self.buttons[xp], 1, 0, 1, 1)
             grid.attach(self.buttons[zm], 0, 2, 1, 1)
             grid.attach(self.buttons[zp], 2, 2, 1, 1)
             grid.attach(adjust, 1, 2, 1, 1)
         else:
-            grid.attach(self.buttons[xm], 0, 1, 1, 1)
-            grid.attach(self.buttons[xp], 2, 1, 1, 1)
-            grid.attach(self.buttons[ym], 1, 1, 1, 1)
-            grid.attach(self.buttons[yp], 1, 0, 1, 1)
+            grid.attach(self.buttons[yp], 0, 1, 1, 1)
+            grid.attach(self.buttons[ym], 2, 1, 1, 1)
+            grid.attach(self.buttons[xm], 1, 1, 1, 1)
+            grid.attach(self.buttons[xp], 1, 0, 1, 1)
             grid.attach(self.buttons[zm], 3, 1, 1, 1)
             grid.attach(self.buttons[zp], 3, 0, 1, 1)
 
